@@ -1,0 +1,6 @@
+---
+prefix: "&7[&aStaff&7]"
+suffix: ""
+format: "&9<{WORLD}> {PREFIX} &7{PLAYER}: &f{MESSAGE}"
+public: true
+...
