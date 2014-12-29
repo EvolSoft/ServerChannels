@@ -1,0 +1,46 @@
+name: ServerChannels
+main: ServerChannels\Main
+version: "1.1"
+api: [1.9.0]
+load: STARTUP
+author: EvolSoft
+description: Create customized chat channels
+website: https://www.evolsoft.tk
+
+commands:
+ serverchannels:
+   aliases: [serverch, sch]
+   description: ServerChannels commands.
+permissions:
+ serverchannels:
+  default: true
+  description: ServerChannels permissions.
+  children:
+   serverchannels.channels:
+    default: op
+    description: ServerChannels channels permissions.
+   serverchannels.commands:
+    default: true
+    description: ServerChannels commands permissions.
+    children:
+      serverchannels.commands.help:
+       default: true
+       description: ServerChannels command Help permission.
+      serverchannels.commands.info:
+       default: op
+       description: ServerChannels command Info permission.
+      serverchannels.commands.reload:
+       default: op
+       description: ServerChannels command Reload permission.
+      serverchannels.commands.list:
+       default: op
+       description: ServerChannels command List permission.
+      serverchannels.commands.join:
+       default: op
+       description: ServerChannels command Join permission.
+      serverchannels.commands.leave:
+       default: op
+       description: ServerChannels command Leave permission.
+      serverchannels.commands.new:
+       default: op
+       description: ServerChannels command New permission.
