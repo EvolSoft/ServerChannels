@@ -1,0 +1,6 @@
+---
+prefix: "&7[&cAdmin&7]"
+suffix: ""
+format: "{PREFIX} &7{PLAYER}: &f{MESSAGE}"
+public: false
+...
