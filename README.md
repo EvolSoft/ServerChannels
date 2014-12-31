@@ -109,7 +109,7 @@ log-on-console: true
 ***/sch new &lt;channel&gt;*** *- Create new channel*<br>
 <br>
 **Permissions:**
-<br><br>
+<br>
 - <dd><i><b>serverchannels.*</b> - ServerChannels permissions.</i></dd>
 - <dd><i><b>serverchannels.channels.*</b> - ServerChannels channels permissions.</i></dd>
 - <dd><i><b>serverchannels.commands.*</b> - ServerChannels commands permissions.</i></dd>
