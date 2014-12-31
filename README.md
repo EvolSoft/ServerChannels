@@ -98,24 +98,24 @@ log-on-console: true
 
 **Commands:**
 
-/serverchannels - ServerChannels commands (aliases: [serverch, sch])
-/sch info - Show info about this plugin
-/sch help - Show help about this plugin
-/sch reload - Reload the config
-/sch list - Show the list of all channels
-/sch join <channel> - Join a channel
-/sch leave - Leave the current channel
-/sch new <channel> - Create new channel
+***/serverchannels*** *- ServerChannels commands (aliases: [serverch, sch])*
+***/sch info*** *- Show info about this plugin*
+***/sch help*** *- Show help about this plugin*
+***/sch reload*** *- Reload the config*
+***/sch list*** *- Show the list of all channels*
+***/sch join &lt;channel&gt;*** *- Join a channel*
+***/sch leave*** *- Leave the current channel*
+***/sch new &lt;channel&gt;*** *- Create new channel*
 <br>
 **Permissions:**
 <br><br>
-- serverchannels.* - ServerChannels permissions.
-- serverchannels.channels.* - ServerChannels channels permissions.
-- serverchannels.commands.* - ServerChannels commands permissions.
-- serverchannels.commands.help - ServerChannels command Help permission.
-- serverchannels.commands.info - ServerChannels command Info permission.
-- serverchannels.commands.reload - ServerChannels command Reload permission.
-- serverchannels.commands.list - ServerChannels command List permission.
-- serverchannels.commands.join - ServerChannels command Join permission.
-- serverchannels.commands.leave - ServerChannels command Leave permission.
-- serverchannels.commands.new - ServerChannels command New permission.
+- <dd><i><b>serverchannels.*</b> - ServerChannels permissions.</i></dd>
+- <dd><i><b>serverchannels.channels.*</b> - ServerChannels channels permissions.</i></dd>
+- <dd><i><b>serverchannels.commands.*</b> - ServerChannels commands permissions.</i></dd>
+- <dd><i><b>serverchannels.commands.help</b> - ServerChannels command Help permission.</i></dd>
+- <dd><i><b>serverchannels.commands.info</b> - ServerChannels command Info permission.</i></dd>
+- <dd><i><b>serverchannels.commands.reload</b> - ServerChannels command Reload permission.</i></dd>
+- <dd><i><b>serverchannels.commands.list</b> - ServerChannels command List permission.</i></dd>
+- <dd><i><b>serverchannels.commands.join</b> - ServerChannels command Join permission.</i></dd>
+- <dd><i><b>serverchannels.commands.leave</b> - ServerChannels command Leave permission.</i></dd>
+- <dd><i><b>serverchannels.commands.new</b> - ServerChannels command New permission.</i></dd>
