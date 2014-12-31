@@ -24,9 +24,9 @@ You can add a prefix and a suffix and you can edit the format (read documentatio
 **Commands:**
 
 <dd><i><b>/serverchannels</b> - ServerChannels commands</i></dd>
-<br>
+<br><br>
 **To-Do:**
-<br>
+<br><br>
 *- Bug fix (if bugs will be found)*
 
 ## Documentation
