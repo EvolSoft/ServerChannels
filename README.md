@@ -18,7 +18,8 @@ PocketMine-MP Alpha_1.4 API 1.9.0
 
 ***This Plugin uses the New API. You can't install it on old versions of PocketMine.***
 
-With ServerChannels you can create private or public chat channels and you can customize them. You can add a prefix and a suffix and you can edit the format (read documentation)
+With ServerChannels you can create private or public chat channels and you can customize them.<br>
+You can add a prefix and a suffix and you can edit the format (read documentation)
 
 **Commands:**
 
