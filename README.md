@@ -26,7 +26,7 @@ You can add a prefix and a suffix and you can edit the format (read documentatio
 <dd><i><b>/serverchannels</b> - ServerChannels commands</i></dd>
 <br>
 **To-Do:**
-<br><br>
+<br>
 *- Bug fix (if bugs will be found)*
 
 ## Documentation
