@@ -99,14 +99,14 @@ log-on-console: true
 
 **Commands:**
 
-***/serverchannels*** *- ServerChannels commands (aliases: [serverch, sch])*
-***/sch info*** *- Show info about this plugin*
-***/sch help*** *- Show help about this plugin*
-***/sch reload*** *- Reload the config*
-***/sch list*** *- Show the list of all channels*
-***/sch join &lt;channel&gt;*** *- Join a channel*
-***/sch leave*** *- Leave the current channel*
-***/sch new &lt;channel&gt;*** *- Create new channel*
+***/serverchannels*** *- ServerChannels commands (aliases: [serverch, sch])*<br>
+***/sch info*** *- Show info about this plugin*<br>
+***/sch help*** *- Show help about this plugin*<br>
+***/sch reload*** *- Reload the config*<br>
+***/sch list*** *- Show the list of all channels*<br>
+***/sch join &lt;channel&gt;*** *- Join a channel*<br>
+***/sch leave*** *- Leave the current channel*<br>
+***/sch new &lt;channel&gt;*** *- Create new channel*<br>
 <br>
 **Permissions:**
 <br><br>
