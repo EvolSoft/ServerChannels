@@ -33,6 +33,8 @@ You can add a prefix and a suffix and you can edit the format (read documentatio
 
 ## Documentation
 
+**Text format (Available on PocketMine console and on MCPE v0.11.0 and later):**
+
 **Colors:**
 
 Black ("&0");<br>
