@@ -83,7 +83,7 @@ class Main extends PluginBase{
     	$data = array(
     			"prefix" => "[".$channel."]",
     			"suffix" => "",
-    			"format" => "{PREFIX} <{USER}> {MESSAGE}",
+    			"format" => "{PREFIX} <{PLAYER}> {MESSAGE}",
     			"public" => true
     	             );
     	$tmp->setAll($data);
