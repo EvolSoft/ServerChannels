@@ -11,6 +11,8 @@ commands:
  serverchannels:
    aliases: [serverch, sch]
    description: ServerChannels commands.
+   permission: serverchannels
+   
 permissions:
  serverchannels:
   default: true
