@@ -4,8 +4,8 @@
  * ServerChannels (v1.1) by EvolSoft
  * Developer: EvolSoft (Flavius12)
  * Website: http://www.evolsoft.tk
- * Date: 29/12/2014 09:51 AM (UTC)
- * Copyright & License: (C) 2014 EvolSoft
+ * Date: 17/06/2015 09:42 AM (UTC)
+ * Copyright & License: (C) 2014-2015 EvolSoft
  * Licensed under MIT (https://github.com/EvolSoft/ServerChannels/blob/master/LICENSE)
  */
 
@@ -20,11 +20,11 @@ use pocketmine\Server;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
 
-class Main extends PluginBase{
+class Main extends PluginBase {
 	
 	//About Plugin Const
 	const PRODUCER = "EvolSoft";
-	const VERSION = "1.1";
+	const VERSION = "1.2";
 	const MAIN_WEBSITE = "http://www.evolsoft.tk";
 	//Other Const
 	//Prefix
