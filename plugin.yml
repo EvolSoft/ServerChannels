@@ -1,7 +1,7 @@
 name: ServerChannels
 main: ServerChannels\Main
 version: "1.2"
-api: [1.9.0]
+api: [1.11.0]
 load: STARTUP
 author: EvolSoft
 description: Create customized chat channels
