@@ -86,7 +86,7 @@ class Commands extends PluginBase implements CommandExecutor{
     						$list = $this->plugin->getAllChannels();
     						$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&b>> &aAvailable Channels &b<<"));
     						for($i = 0; $i < count($list); $i++){
-    							if($sender->hasPermission(strtolower("serverchannels.channel." . $list[$i]))){
+    							if($sender->hasPermission(strtolower("serverchannels.channels." . $list[$i]))){
     								$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&b- &a" . $list[$i]));
     							}
     						}
@@ -101,7 +101,7 @@ class Commands extends PluginBase implements CommandExecutor{
     						if($sender->hasPermission("serverchannels.commands.join")){
     							if(isset($args[1])){
     								//Check channel permission
-    								if($sender->hasPermission(strtolower("serverchannels.channel." . $args[1]))){
+    								if($sender->hasPermission(strtolower("serverchannels.channels." . $args[1]))){
     									$status = $this->plugin->joinChannel($sender, $args[1]);
     									if($status == false){
     										$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX  . "&cChannel not found."));
