@@ -30,10 +30,17 @@ class Main extends PluginBase {
 	//Prefix
 	const PREFIX = "&b[&aServer&eChannels&b] ";
 	
+	/** @var Config */
 	public $cfg;
-	
+	/** @var array */
 	public $users;
 	
+	/**
+	 * @param string $symbol
+	 * @param string $message
+	 *
+	 * @return string
+	 */
 	public function translateColors($symbol, $message){
 		
 		$message = str_replace($symbol."0", TextFormat::BLACK, $message);
@@ -62,7 +69,10 @@ class Main extends PluginBase {
 		
 		return $message;
 	}
-	
+
+	/**
+	 * @return void
+	 */
     public function onEnable(){
         @mkdir($this->getDataFolder());
         if(!file_exists($this->getDataFolder() . "channels/")){
@@ -76,7 +86,12 @@ class Main extends PluginBase {
         $this->getCommand("serverchannels")->setExecutor(new Commands\Commands($this));
 	    $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
     }
-    
+	
+	/**
+	 * @param string $channel
+	 *
+	 * @return bool
+	 */
     public function createChannel($channel){
     	$channel = strtolower($channel);
     	$tmp = new Config($this->getDataFolder() . "channels/" . strtolower($channel . ".yml"), Config::YAML);
@@ -90,12 +105,18 @@ class Main extends PluginBase {
     	$tmp->save();
     	return true;
     }
-    
+   
+	/**
+	 * @return string
+	 */
     public function getLogOnConsole(){
     	$tmp = $this->getConfig()->getAll();
     	return $tmp["log-on-console"];
     }
     
+	/**
+	 * @return void
+	 */
     public function initializeChannelPermissions(){
     	$channels = $this->getAllChannels();
     	for($i = 0; $i < count($channels); $i++){
@@ -104,10 +125,21 @@ class Main extends PluginBase {
     	}
     }
     
+	/**
+	 * @param Player $player
+	 *
+	 * @return bool
+	 */
     public function hasJoined(Player $player){
     	return isset($this->users[strtolower($player->getName())]);
     }
     
+	/**
+	 * @param Player $player
+	 * @param string $channel
+	 *
+	 * @return bool
+	 */
     public function joinChannel(Player $player, $channel){
     	$channel = strtolower($channel);
     	//Check if channel exists
@@ -125,7 +157,12 @@ class Main extends PluginBase {
     		return false;
     	}
     }
-    
+   
+	/**
+	 * @param Player $player
+	 *
+	 * @return bool
+	 */
     public function leaveChannel(Player $player){
     	if($this->hasJoined($player)){
     		unset($this->users[strtolower($player->getName())]);
@@ -134,7 +171,12 @@ class Main extends PluginBase {
     		return false;
     	}
     }
-    
+   
+	/**
+	 * @param Player $player
+	 *
+	 * @return bool|string
+	 */
     public function getPlayerChannel(Player $player){
     	if($this->hasJoined($player)){
     		return $this->users[strtolower($player->getName())];
@@ -143,6 +185,9 @@ class Main extends PluginBase {
     	}
     }
     
+	/**
+	 * @return string[]
+	 */
     public function getAllChannels(){
     	$files = glob($this->getDataFolder() . "channels/*.yml");
     	for($i = 0; $i < count($files); $i++){
@@ -153,10 +198,20 @@ class Main extends PluginBase {
     	return $result;
     }
     
+	/**
+	 * @param string $channel
+	 *
+	 * @return bool
+	 */
     public function channelExists($channel){
     	return file_exists($this->getDataFolder() . "channels/" . strtolower($channel . ".yml"));
     }
     
+	/**
+	 * @param string $channel
+	 *
+	 * @return bool
+	 */
     public function isChannelPublic($channel){
     	$channel = strtolower($channel);
     	if($this->channelExists($channel)){
@@ -167,7 +222,12 @@ class Main extends PluginBase {
     		return false;
     	}
     }
-    
+   
+	/**
+	 * @param string $channel
+	 *
+	 * @return string[]
+	 */
     public function getChannelPlayers($channel){
     	$channel = strtolower($channel);
     	$tmp = array_keys($this->users, $channel);
@@ -177,6 +237,13 @@ class Main extends PluginBase {
     	return $result;
     }
     
+	/**
+	 * @param string $channel
+	 * @param Player $player
+	 * @param string $message
+	 *
+	 * @return string
+	 */
     public function getChannelFormat($channel, Player $player, $message){
     	$channel = strtolower($channel);
     	if($this->channelExists($channel)){
@@ -198,6 +265,13 @@ class Main extends PluginBase {
     	}
     }
     
+	/**
+	 * @param Player $player
+	 * @param string $channel
+	 * @param string $message
+	 *
+	 * @return void
+	 */
     public function SendChannelMessage(Player $player, $channel, $message){
     	$channel = strtolower($channel);
     	//Check if channel exists
