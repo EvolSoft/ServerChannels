@@ -1,0 +1,39 @@
+---
+admin:
+  name: "&b&lAdmin"
+  prefix: "&c[&bAdmin&c]"
+  suffix: ""
+  format: "{PREFIX} <{PLAYER}> {MESSAGE}"
+  hidden: false
+  auth: "whitelist"
+  password: ""
+  whitelist:
+    - "Flavius12"
+staff:
+  name: "&a&lStaff"
+  prefix: "&b[&aStaff&b]"
+  suffix: ""
+  format: "{PREFIX} <{PLAYER}> {MESSAGE}"
+  hidden: false
+  auth: "password"
+  password: "password"
+  whitelist: []
+private:
+  name: "&d&oPrivate"
+  prefix: "&d[Private]"
+  suffix: ""
+  format: "{PREFIX} <{PLAYER}> {MESSAGE}"
+  hidden: true
+  auth: "none"
+  password: ""
+  whitelist: []
+users:
+  name: "&e&lUsers"
+  prefix: "&7[&eUsers&7]"
+  suffix: ""
+  format: "{PREFIX} <{PLAYER}> {MESSAGE}"
+  hidden: false
+  auth: "none"
+  password: ""
+  whitelist: []
+...

@@ -1,11 +1,11 @@
 <?php
 
 /*
- * ServerChannels (v1.2) by EvolSoft
+ * ServerChannels (v2.0) by EvolSoft
  * Developer: EvolSoft (Flavius12)
- * Website: http://www.evolsoft.tk
- * Date: 29/12/2014 09:51 AM (UTC)
- * Copyright & License: (C) 2014-2015 EvolSoft
+ * Website: https://www.evolsoft.tk
+ * Date: 14/02/2018 10:03 AM (UTC)
+ * Copyright & License: (C) 2014-2018 EvolSoft
  * Licensed under MIT (https://github.com/EvolSoft/ServerChannels/blob/master/LICENSE)
  */
 
@@ -13,35 +13,45 @@ namespace ServerChannels;
 
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
+use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
-use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
-use pocketmine\utils\Config;
-use pocketmine\utils\TextFormat;
 
-class EventListener extends PluginBase implements Listener{
+class EventListener extends PluginBase implements Listener {
 	
-	public function __construct(Main $plugin){
+    /** @var ServerChannels */
+    private $plugin;
+    
+	public function __construct(ServerChannels $plugin){
 		$this->plugin = $plugin;
 	}
 	
+	/**
+	 * @param PlayerJoinEvent $event
+	 */
+	public function onPlayerJoin(PlayerJoinEvent $event){
+	    $ch = $this->plugin->getDefaultChannel();
+	    if($this->plugin->isDefaultChannelEnabled() && $this->plugin->channelExists($ch) && $this->plugin->getChannelAuth($ch) == ServerChannels::AUTH_NONE){
+	        $this->plugin->joinChannel($event->getPlayer(), $ch);
+	    }
+	}
+	
+	/**
+	 * @param PlayerChatEvent $event
+	 */
 	public function onPlayerChat(PlayerChatEvent $event){
 		$player = $event->getPlayer();
-		$this->cfg = $this->plugin->getConfig()->getAll();
 		$message = $event->getMessage();
-		if($this->plugin->getPlayerChannel($player)){
-			$channel = $this->plugin->getPlayerChannel($player);
-			$this->plugin->SendChannelMessage($player, $channel, $message);
+		if(($channel = $this->plugin->getCurrentChannel($player))){
+			$this->plugin->sendChannelMessage($player, $channel, $message);
 			$event->setCancelled(true);
 		}
 	}
 	
+	/**
+	 * @param PlayerQuitEvent $event
+	 */
 	public function onPlayerQuit(PlayerQuitEvent $event){
-		$player = $event->getPlayer();
-		if($this->plugin->hasJoined($player)){
-			$this->plugin->leaveChannel($player);
-		}
+	    $this->plugin->leaveChannel($event->getPlayer());
 	}
-
 }
-?>

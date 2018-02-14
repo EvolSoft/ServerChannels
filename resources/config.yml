@@ -1,4 +1,12 @@
 ---
+# Date\Time format (replaced in {TIME}). For format codes read http://php.net/manual/en/datetime.formats.php
 datetime-format: "H:i:s"
+# Log channel messages on console
 log-on-console: true
+# Default channel settings
+default-channel:
+  # Enable default (join) channel
+  enabled: false
+  # Default (join) channel
+  channel: "users"
 ...

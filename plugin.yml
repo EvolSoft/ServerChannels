@@ -1,11 +1,11 @@
 name: ServerChannels
-main: ServerChannels\Main
-version: "1.2"
-api: [1.11.0]
+main: ServerChannels\ServerChannels
+version: 2.0
+api: [3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11]
 load: STARTUP
 author: EvolSoft
-description: Create customized chat channels
-website: http://www.evolsoft.tk
+description: A powerful chat channelling plugin for PocketMine-MP
+website: https://www.evolsoft.tk
 
 commands:
  serverchannels:
@@ -19,12 +19,15 @@ permissions:
   description: ServerChannels permissions.
   children:
    serverchannels.channels:
-    default: op
+    default: true
     description: ServerChannels channels permissions.
    serverchannels.commands:
     default: true
     description: ServerChannels commands permissions.
     children:
+      serverchannels.commands.create:
+       default: op
+       description: ServerChannels command New permission.
       serverchannels.commands.help:
        default: true
        description: ServerChannels command Help permission.
@@ -43,6 +46,3 @@ permissions:
       serverchannels.commands.leave:
        default: op
        description: ServerChannels command Leave permission.
-      serverchannels.commands.new:
-       default: op
-       description: ServerChannels command New permission.
