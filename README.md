@@ -15,7 +15,7 @@ PocketMine-MP 1.7dev API 3.0.0-ALPHA7 -> 3.0.0-ALPHA11
 ## Overview
 
 **ServerChannels** is a powerful chat channelling plugin for PocketMine-MP.
-You can create highly customizable chat channels on your MC:PE server thank to this plugin.
+You can create highly customizable chat channels on your MC:PE server thanks to this plugin.
 
 ***Features:***
 
