@@ -59,11 +59,11 @@ Underline ("&n");<br>
 Italic ("&o");<br>
 Reset ("&r");<br>
 
-**Add and configure a channel:**
+**Create and configure a channel:**
 
-*Remember that you must have the "serverchannels.channels.<channel>" permission to join the channel*
+*Remember that you must have the "serverchannels.channels.&lt;channel&gt;" permission to join the channel*
 
-1. Run the command "/sch create <channel>"<br>
+1. Run the command "/sch create &lt;channel&gt;"<br>
 2. Open "channels.yml" file inside plugin configuration folder and open it<br>
 This is a channel config file entry:
 
