@@ -1,10 +1,10 @@
 <?php
 
 /*
- * ServerChannels (v2.0) by EvolSoft
+ * ServerChannels (v2.1) by EvolSoft
  * Developer: EvolSoft (Flavius12)
  * Website: https://www.evolsoft.tk
- * Date: 14/02/2018 10:03 AM (UTC)
+ * Date: 15/02/2018 12:50 AM (UTC)
  * Copyright & License: (C) 2014-2018 EvolSoft
  * Licensed under MIT (https://github.com/EvolSoft/ServerChannels/blob/master/LICENSE)
  */
@@ -36,16 +36,16 @@ class ServerChannels extends PluginBase {
 	const SUCCESS = 1;
 	
 	/** @var int */
-	const ERR_WRONG_PASS = 1;
+	const ERR_WRONG_PASS = 2;
 	
 	/** @var int */
-	const ERR_NOT_WHITELISTED = 2;
+	const ERR_NOT_WHITELISTED = 3;
 	
 	/** @var int */
-	const ERR_CHANNEL_NOT_FOUND = 3;
+	const ERR_CHANNEL_NOT_FOUND = 4;
 	
 	/** @var int */
-	const ERR_NO_CHANNEL = 4;
+	const ERR_NO_CHANNEL = 5;
 	
 	/** @var int */
 	const AUTH_NONE = 0;
