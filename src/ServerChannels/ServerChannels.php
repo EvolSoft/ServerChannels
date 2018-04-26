@@ -1,7 +1,7 @@
 <?php
 
 /*
- * ServerChannels (v2.1) by EvolSoft
+ * ServerChannels (v2.2) by EvolSoft
  * Developer: EvolSoft (Flavius12)
  * Website: https://www.evolsoft.tk
  * Date: 15/02/2018 12:50 AM (UTC)
