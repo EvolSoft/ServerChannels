@@ -1,11 +1,10 @@
 <?php
 
 /*
- * ServerChannels (v2.2) by EvolSoft
- * Developer: EvolSoft (Flavius12)
+ * ServerChannels v2.3 by EvolSoft
+ * Developer: Flavius12
  * Website: https://www.evolsoft.tk
- * Date: 15/02/2018 12:50 AM (UTC)
- * Copyright & License: (C) 2014-2018 EvolSoft
+ * Copyright (C) 2014-2018 EvolSoft
  * Licensed under MIT (https://github.com/EvolSoft/ServerChannels/blob/master/LICENSE)
  */
 
@@ -68,41 +67,6 @@ class ServerChannels extends PluginBase {
 	/** @var ServerChannels */
 	private static $instance = null;
 	
-	/**
-	 * Translate Minecraft colors
-	 *
-	 * @param string $symbol
-	 * @param string $message
-	 *
-	 * @return string
-	 */
-	public function translateColors($symbol, $message){
-	    $message = str_replace($symbol . "0", TextFormat::BLACK, $message);
-	    $message = str_replace($symbol . "1", TextFormat::DARK_BLUE, $message);
-	    $message = str_replace($symbol . "2", TextFormat::DARK_GREEN, $message);
-	    $message = str_replace($symbol . "3", TextFormat::DARK_AQUA, $message);
-	    $message = str_replace($symbol . "4", TextFormat::DARK_RED, $message);
-	    $message = str_replace($symbol . "5", TextFormat::DARK_PURPLE, $message);
-	    $message = str_replace($symbol . "6", TextFormat::GOLD, $message);
-	    $message = str_replace($symbol . "7", TextFormat::GRAY, $message);
-	    $message = str_replace($symbol . "8", TextFormat::DARK_GRAY, $message);
-	    $message = str_replace($symbol . "9", TextFormat::BLUE, $message);
-	    $message = str_replace($symbol . "a", TextFormat::GREEN, $message);
-	    $message = str_replace($symbol . "b", TextFormat::AQUA, $message);
-	    $message = str_replace($symbol . "c", TextFormat::RED, $message);
-	    $message = str_replace($symbol . "d", TextFormat::LIGHT_PURPLE, $message);
-	    $message = str_replace($symbol . "e", TextFormat::YELLOW, $message);
-	    $message = str_replace($symbol . "f", TextFormat::WHITE, $message);
-	    
-	    $message = str_replace($symbol . "k", TextFormat::OBFUSCATED, $message);
-	    $message = str_replace($symbol . "l", TextFormat::BOLD, $message);
-	    $message = str_replace($symbol . "m", TextFormat::STRIKETHROUGH, $message);
-	    $message = str_replace($symbol . "n", TextFormat::UNDERLINE, $message);
-	    $message = str_replace($symbol . "o", TextFormat::ITALIC, $message);
-	    $message = str_replace($symbol . "r", TextFormat::RESET, $message);
-	    return $message;
-	}
-	
 	public function onLoad(){
 	    if(!self::$instance instanceof ServerChannels){
 	        self::$instance = $this;
@@ -136,7 +100,7 @@ class ServerChannels extends PluginBase {
     public function initializeChannelsPermissions(){
         foreach($this->getAllChannels() as $k => $v){
             $permission = new Permission("serverchannels.channels." . strtolower($k), "ServerChannels " . $k . " channel permission.");
-            Server::getInstance()->getPluginManager()->addPermission($permission);
+            $this->getServer()->getPluginManager()->addPermission($permission);
         }
     }
     
@@ -544,7 +508,7 @@ class ServerChannels extends PluginBase {
                 $cmessage = $scevent->getCancelledMessage();
                 return self::CANCELLED;
             }
-            $message = $this->translateColors("&", $this->formatChannelMessage($channel, $player, $scevent->getMessage()));
+            $message = TextFormat::colorize($this->formatChannelMessage($channel, $player, $scevent->getMessage()));
             if($this->isChannelHidden($channel)){
                 foreach($this->getChannelPlayers($channel) as $cp){
                     $cp->sendMessage($message);
@@ -555,7 +519,7 @@ class ServerChannels extends PluginBase {
                 }
             }
             if($this->getLogOnConsole()){
-                Server::getInstance()->getLogger()->info($message);
+                $this->getServer()->getLogger()->info($message);
             }
         }
         return self::SUCCESS;

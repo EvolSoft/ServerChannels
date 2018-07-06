@@ -1,11 +1,10 @@
 <?php
 
 /*
- * ServerChannels (v2.2) by EvolSoft
- * Developer: EvolSoft (Flavius12)
+ * ServerChannels v2.3 by EvolSoft
+ * Developer: Flavius12
  * Website: https://www.evolsoft.tk
- * Date: 14/02/2018 10:03 AM (UTC)
- * Copyright & License: (C) 2014-2018 EvolSoft
+ * Copyright (C) 2014-2018 EvolSoft
  * Licensed under MIT (https://github.com/EvolSoft/ServerChannels/blob/master/LICENSE)
  */
 
